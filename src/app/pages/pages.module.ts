@@ -20,6 +20,7 @@ import { PAGES_ROUTES } from './pages.routes';
 // Temp
 import { IncrementadorComponent } from '../components/incrementador/incrementador.component';
 import { GraficaDonaComponent } from '../components/grafica-dona/grafica-dona.component';
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { GraficaDonaComponent } from '../components/grafica-dona/grafica-dona.co
         Graficas1Component,
         PagesComponent,
         IncrementadorComponent,
-        GraficaDonaComponent
+        GraficaDonaComponent,
+        AccountSettingsComponent
     ],
     imports: [ 
         CommonModule,
