@@ -6,35 +6,35 @@ import { URL_SERVICIOS } from '../config/config';
 })
 export class ImagenPipe implements PipeTransform {
 
-  transform(img: string, tipo: string = 'usuario'): any {
+  transform( img: string, tipo: string = 'usuario'): any {
 
     let url = URL_SERVICIOS + '/img';
 
-    // Si no hay imagen
-    if (!img) {
-      return url + '/usuario/xxx'; // No image!
+    if ( !img ) {
+      return url + '/usuarios/xxx';
     }
 
-    // Si es una imagen de Google
-    if ( img.indexOf('http') >= 0) {
+    if ( img.indexOf('https') >= 0 ) {
       return img;
     }
 
-    switch (tipo) {
+    switch ( tipo ) {
 
       case 'usuario':
         url += '/usuarios/' + img;
-        console.log(url);
-        break;
+      break;
+
       case 'medico':
         url += '/medicos/' + img;
-        break;
+      break;
+
       case 'hospital':
-        url += '/hospitales/' + img;
-        break;
+         url += '/hospitales/' + img;
+      break;
+
       default:
-        url += '/usuarios/xxx';
         console.log('tipo de imagen no existe, usuario, medicos, hospitales');
+        url += '/usurios/xxx';
     }
 
     return url;
