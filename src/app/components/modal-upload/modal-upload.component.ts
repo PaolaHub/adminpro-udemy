@@ -36,15 +36,15 @@ export class ModalUploadComponent implements OnInit {
       swal('Sólo imágenes', 'El archivo seleccionado no es una imagen', 'error');
       this.imagenSubir = null;
       return;
+
     }
-
     this.imagenSubir = archivo;
-
     const reader = new FileReader();
     const urlImagenTemp = reader.readAsDataURL( archivo );
 
-    reader.onloadend = () => this.imagenTemp = reader.result.toString();
-
+    reader.onloadend = () => {
+      this.imagenTemp = reader.result.toString();
+    };
   }
 
   subirImagen() {

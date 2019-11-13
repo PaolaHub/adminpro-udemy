@@ -7,6 +7,7 @@ import { MedicoService } from '../../services/medico/medico.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ModalUploadService } from '../../components/modal-upload/modal-upload.service';
 
+
 @Component({
   selector: 'app-medico',
   templateUrl: './medico.component.html',
