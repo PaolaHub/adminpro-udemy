@@ -13,7 +13,7 @@ export class MedicosComponent implements OnInit {
 
   medicos: Medico[] = [];
   totalMedicos: number = 0;
-  desde: number = 0;
+  desde: number = 0;z
   cargando: boolean = true;
 
   constructor(

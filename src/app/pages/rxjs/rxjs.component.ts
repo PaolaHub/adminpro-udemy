@@ -2,13 +2,13 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable, Subscriber, Subscription } from 'rxjs'; // Reactiv extensions
 import { retry, map, filter } from 'rxjs/operators';
 
+
 @Component({
   selector: 'app-rxjs',
   templateUrl: './rxjs.component.html',
   styles: []
 })
 export class RxjsComponent implements OnInit, OnDestroy {
-  
 
     subscription: Subscription;
 
@@ -18,7 +18,7 @@ export class RxjsComponent implements OnInit, OnDestroy {
     this.subscription = this.regresaObservable()
     .subscribe(
       // Cuando se llama a un next para mandale información mientras escucha.
-      numero => console.log("Subs ", numero),
+      numero => console.log('Subs ', numero),
       // Cuando hay un error.
       error => console.error('Error en el obs', error),
       // Cuando el observador termino.
@@ -31,7 +31,7 @@ export class RxjsComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    console.log("La página se va a cerrar");
+    console.log('La página se va a cerrar');
     this.subscription.unsubscribe();
   }
 
@@ -70,15 +70,12 @@ export class RxjsComponent implements OnInit, OnDestroy {
         // map(resp => { return resp.valor})
         map(resp => resp.valor),
         filter( (valor, index) => {
-          
-          if(valor % 2 === 1) {
+          if (valor % 2 === 1) {
             return true;
-          }
-          else  {
+          } else  {
             return false;
           }
-        })
-      )
+        }));
   }
 
 }

@@ -5,12 +5,13 @@ import { ModalUploadService } from '../../components/modal-upload/modal-upload.s
 
 declare var swal: any;
 
+
 @Component({
   selector: 'app-hospitales',
   templateUrl: './hospitales.component.html',
   styles: []
 })
-export class HospitalesComponent implements OnInit {
+export class HospitalesComponent implements OnInit {z
 
   hospitales: Hospital[] = [];
   desde: number = 0;
